@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2 - IPv4 Addressing</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+
+    <style>
+        .heading {
+            font-size: 130%;
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        .aim {
+            font-size: 130%;
+        }
+
+        .theory {
+            font-size: 130%;
+        }
+
+        .procedure {
+            font-size: 130%;
+        }
+
+        body {
+            background-color: azure;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="luxbar luxbar-static">
+        <input type="checkbox" id="luxbar-checkbox" class="luxbar-checkbox">
+        <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
+            <ul class="luxbar-navigation">
+                <li class="luxbar-header">
+                    <a class="luxbar-brand" href="#">Computer Networks Virtual Lab</a>
+                    <label class="luxbar-hamburger luxbar-hamburger-doublespin" for="luxbar-checkbox"> <span></span>
+                    </label>
+                </li>
+                <li class="luxbar-item"><a href="index.html">Home</a></li>
+                <li class="luxbar-item"><a href="lab2.html">Lab</a></li>
+                <li class="luxbar-item"><a href="quiz2.html">Quiz</a></li>
+               
+            </ul>
+        </div>
+    </div>
+
+    <div class="heading">
+        <h1>Lab2 - IPv4 Addressing</h1>
+    </div>
+
+    <div class="aim">
+        <h2>Aim :</h2>
+        <p>1) To give IP Address of different classes in given Network id.</p>
+    </div>
+
+    <div class="theory">
+        <h2>Theory :</h2>
+        <p class="MsoNormal" style="text-align:justify">
+            <!--Theory content goes here -->
+            IP addresses enable computers to communicate by providing unique identifiers for the computer itself and for
+            the network over which it is located. An IP address is a 32 bit value that contains a network identifier(net
+            -id) and a host identifier (host-id).<br>
+            The network administrators need to assign IP addresses to the system on their network. This address needs to
+            be a unique one. All the computers on a particular subnet will have the same network identifier but
+            different host identifiers. The Internet Assigned Numbers Authority (IANA) assigns network identifiers to
+            avoid any duplication of addresses.
+            <br>
+            Host
+            Identifier
+            Network
+            Identifier
+            32 bits
+
+            <br>
+            The 32 bit IPv4 address is grouped into groups of eight bits, separated by dots. Each 8 bit group is then
+            converted into its equivalent binary number. Thus each octet (8bit) can take value from 0 to 255. The IPv4
+            in the dotted decimal notation can range from 0.0.0.0 to 255.255.255.255.
+            The IPv4 Address are classified into 5 types as follows:<br>
+            1. Class A &nbsp; &nbsp; 2. Class B <br>
+            3. Class C &nbsp; &nbsp; 4. Class D<br>
+            5. Class E<br>
+
+            Class A <br>
+            The first bit of the first octet is always set to 0 (zero). Thus the first octet ranges from 1-127 i.e.<br>
+            00000000 - 01111111<br>
+            1-127<br>
+            Class A addresses only include IP starting from 1.x.x.x to 126.x.x.x only. The IP range 127.x.x.x is
+            reserved for loopback IP addresses.
+            The default subnet mask for class Class A IP address is 255.0.0.0 which implies that Class A addressing can
+            have 126 networks and 167777214 hosts.
+            Class A IP address format is thus :
+            0NNNNNNN.HHHHHHHH.HHHHHHHH.HHHHHHHH
+            <br><br>
+            Class B<br>
+            An IP address which belongs to class B has the first two bits in the first octet set to 10, i.e.<br>
+            10000000 - 10111111<br>
+            128 - 191<br>
+            Class B IP Addresses range from 128.0.x.x to 191.255.x.x. The default subnet mask for Class B is
+            255.255.x.x.
+            Class B has 16384 Network addresses and 65534 Host addresses.
+            Class B IP addresses format is: 10NNNNNN.NNNNNNNN.HHHHHHHH.HHHHHHHH
+            <br><br>
+            Class C<br>
+            The first octet of Class C IP address has its first 3 bits set to 110,that is:<br>
+            11000000 - 11011111<br>
+            192 - 223<br>
+
+            Class C IP addresses range from 192.0.0.x to 223.255.255.x. The default subnet mask for Class C is
+            255.255.255.x.
+            Class C gives 2097152 Network addresses and 254 Host addresses.
+            Class C IP address format is : 110NNNNN.NNNNNNNN.NNNNNNNN.HHHHHHHH
+
+
+        </p>
+    </div>
+
+    <div class="procedure">
+
+        <h2>Procedure :</h2>
+        <p class="MsoNormal" style="text-align:justify">
+            1) The aim is to Give IP Addresses to the PCs.<br>
+            2) To perform the experiment follow the below steps<br>
+            3) A choice list would be given defining the Classes<br>
+            4) The user has to select the class in which they choose to give IP Addresses<br>
+            5) After that a Network ID would be given and the user has to enter the IP Addresses according to the
+            Network ID.<br>
+            6) Click on submit to test whether the IP address given to PCs make them into Network or not.<br>
+        </p>
+
+    </div>
+
+</body>
+
+</html>

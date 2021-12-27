@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3 - IPv4 Subnetting</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+
+    <style>
+        .heading {
+            font-size: 130%;
+            text-align: center;
+            margin-top: 5%;
+        }
+
+        .aim {
+            font-size: 130%;
+        }
+
+        .theory {
+            font-size: 130%;
+        }
+
+        .procedure {
+            font-size: 130%;
+        }
+
+        body {
+            background-color: azure;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="luxbar luxbar-static">
+        <input type="checkbox" id="luxbar-checkbox" class="luxbar-checkbox">
+        <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
+            <ul class="luxbar-navigation">
+                <li class="luxbar-header">
+                    <a class="luxbar-brand" href="#">Computer Networks Virtual Lab</a>
+                    <label class="luxbar-hamburger luxbar-hamburger-doublespin" for="luxbar-checkbox"> <span></span>
+                    </label>
+                </li>
+                <li class="luxbar-item"><a href="index.html">Home</a></li>
+                <li class="luxbar-item"><a href="lab3.html">Lab</a></li>
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="heading">
+        <h1>Lab3 - IPv4 Subnetting</h1>
+    </div>
+
+    <div class="aim">
+        <h2>Aim :</h2>
+        <p>1) To give IP Address of different classes in given Network id and Subnet .</p>
+    </div>
+
+    <div class="theory">
+        <h2>Theory :</h2>
+        <p class="MsoNormal" style="text-align:justify">
+            <!--Theory content goes here -->
+            Each IP class is equipped with its own default subnet mask which bounds that IP class to have prefixed
+            number of Networks and prefixed number of Hosts per network. Glassful IP addressing does not provide any
+            flexibility of having less number of Hosts per Network or more Networks per IP Class.
+            CIDR or Classless Inter Domain Routing provides the flexibility of borrowing bits of Host part of the IP
+            address and using them as Network in Network, called Subnet. By using subletting, one singled Class A IP
+            address can be used to have smaller sub_networks which provides better network management capabilities.<br>
+            <br>
+            Class A<br>
+            In Class A, only the first octet is used as Network identifier and rest of three octets are used to be
+            assigned to Hosts (i.e 16777214 Hosts per Network). To make more subnet in Class A, bits from Host part are
+            borrowed and the subnet mask is changed accordingly.
+            For example, if one MSB (Most Significant Bit) is borrowed from host bits of second octet and added to
+            Network address, it creates two Subnets with 8388606 Hosts per Subnet.
+            The Subnet mask is changed accordingly to reflect subletting. Given below is list of all possible
+            combination of Class A subnets:
+            <br>
+           
+
+            <br>
+            Class B<br>
+            By default, using Glassful Networking, 14 bits are used as Network bits providing 16384 Networks and 65534
+            Hosts. Class B IP Addresses can be subsetted the same way as Class A addresses, by borrowing bits from Host
+            bits. Below is given all possible combination of Class B subnetting:
+            <br>
+           
+
+            <br>
+
+            Class C<br>
+            Class C IP addresses are normally assigned to avery small size networks because it can only have 254 hosts
+            in a network. Given below is a list of all possible combination of subsetted Class B IP addresses:
+            <br>
+          
+        </p>
+    </div>
+
+    <div class="procedure">
+
+        <h2>Procedure :</h2>
+        <p class="MsoNormal" style="text-align:justify">
+
+            1) The aim is to Give IP Addresses to the PCs.<br>
+            2) To perform the experiment follow the below steps<br>
+            3) A choice list would be given defining the Classes<br>
+            4) The user has to select the class in which they choose to give IP Addresses<br>
+            5) After that a Network ID would be given and the user has to enter the IP Addresses according to the
+            Network ID.<br>
+            6) Click on submit to test whether the IP address given to PCs make them into Network or not.<br>
+
+        </p>
+    </div>
+
+</body>
+
+</html>

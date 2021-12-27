@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        input{
+            
+            margin:10px;
+            width:40%;
+            height:25px;
+            border:2px solid black;
+            border-radius: 5px;
+        }
+        .vform{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            border:3px solid black;
+            margin-left:30%;
+            margin-right:30%;
+            padding:10px;
+            margin-top:20px;
+            border-radius: 10px;
+
+        }
+        h2{
+            text-align: center;
+        }
+        .but{
+            background-color: Green;
+            color:azure;
+            border-radius:4px;
+            font-weight: bold;
+            width:20%;
+            height:25px;
+
+        }
+        .but:hover{
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>From Validation Using Regex</h2>
+        <form action="TOC.html" method="POST" class="vform">
+            Username :<input type="text" id="user" class="text" onblur="myFunction()"><br>
+            Password :<input type="text" id="pass" class="text" onblur="myFunction1()"><br>
+            Email-id :<input type="text" id="email" class="text" onblur="myFunction2()"><br>
+            Phone no :<input type="text" id="phone" class="text" onblur="myFunction3()"><br>
+            Address  :<input type="text" id="add" class="text" onblur="myFunction4()"><br>
+            <input class="but" type="button" value="Submit">
+        </form>
+        <p id="result"></p>
+    </div>
+</body>
+<script>
+    function myFunction() {
+        var uname = document.getElementById('user').value;
+        var nameRegex = /^(?=.*[A-Z])(?=.*[0-9])[A-Z0-9a-z]{6,10}$/;
+
+        if(nameRegex.test(uname))
+        {
+            document.getElementById("user").style.borderColor = "Green";
+        }
+        else
+        {
+            document.getElementById("user").style.borderColor = "red";
+            alert("Invlaid Username (please include alteast 1 Capital letter & any numerical value and min length should be 6)");
+        }
+}
+ function myFunction1() {
+        var pname = document.getElementById('pass').value;
+        var nameRegex1 = /^(?=.*[a-z])(?=.*[0-9])[0-9a-z]{6,10}$/;
+        var nameRegex2 = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z])[a-zA-Z0-9]{6,10}$/;
+        var nameRegex3 = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])[a-z0-9!@#$%^&*]{6,16}$/;
+        var regexPttn = /^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+        if(nameRegex1.test(pname))
+        {
+            alert("Weak Passsword (All conditions not satisfied but you can still continue)");
+            document.getElementById("pass").style.borderColor = "Orange";
+           
+        }
+        else if(nameRegex2.test(pname))
+        {
+            alert("Moderate Passsword (All conditions not satisfied but you can still continue)");
+            document.getElementById("pass").style.borderColor = "Yellow";
+        }
+        else if(nameRegex3.test(pname))
+        {
+            alert("Moderate Passsword (All conditions not satisfied but you can still continue)");
+            document.getElementById("pass").style.borderColor = "Yellow";
+        }
+        else if(regexPttn.test(pname))
+        {
+           
+            document.getElementById("pass").style.borderColor = "Green";
+        }
+        else
+        {
+            alert("Invalid Password (Please include any symbol,numerical value and and capital letter");
+            document.getElementById("pass").style.borderColor = "Red";
+        }
+ }
+function myFunction2() {
+        var email = document.getElementById('email').value;
+        var validRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+
+        if(validRegex.test(email))
+        {
+            document.getElementById("email").style.borderColor = "Green";
+        }
+        else
+        {
+            alert("Invalid Email-id");
+            document.getElementById("email").style.borderColor = "Red";
+        }
+}
+function myFunction3() {
+        var phonne = document.getElementById('phone').value;
+        var validRegex1 = /^(\+91)?[6-9][0-9]{9}$/
+
+        if(validRegex1.test(phonne))
+        {
+            document.getElementById("phone").style.borderColor = "Green";
+        }
+        else
+        {
+            alert("Invalid Phone no:");
+            document.getElementById("phone").style.borderColor = "Red";
+        }
+}
+function myFunction4() {
+        var add1 = document.getElementById('add').value;
+        var validRegex1 = /^[a-zA-Z0-9\s,.'-]{3,}$/
+
+        if(validRegex1.test(add1))
+        {
+            document.getElementById("add").style.borderColor = "Green";
+        }
+        else
+        {
+            alert("Invalid Address");
+            document.getElementById("add").style.borderColor = "Red";
+        }
+}
+</script>
+</html>

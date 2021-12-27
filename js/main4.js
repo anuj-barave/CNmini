@@ -154,6 +154,23 @@ function checkNetworkValue1() {
             count=count+1;
         }
     }
+    if(count==8)
+    {
+      
+        setTimeout(doSomething19, 3000);
+
+        function doSomething19() {
+        
+        alert('Success');}
+    }
+    else
+    {
+        setTimeout(doSomething19, 3000);
+
+        function doSomething19() {
+        
+        alert('Failed');}
+    }
    
 }
 
